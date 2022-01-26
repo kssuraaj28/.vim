@@ -117,6 +117,14 @@ autocmd BufNewFile  *.sh     0r ~/.vim/skeleton.sh | execute "normal! G"
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " =======================
+" Netrw Settings
+" =======================
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 20
+
+" =======================
 " Key Remaps
 " =======================
 " Basic remaps
@@ -133,10 +141,11 @@ nnoremap <leader>t :term<CR>
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 
 " Basic Code Navigation
-nnoremap <leader>b :buffers<CR>:buffer<space>
 nnoremap <leader>e :Vex<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>r :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>w :Windows<CR>
 
 " Symbol Navigation
 nnoremap <silent><nowait> <space>S  :<C-u>CocList -I symbols<cr> 
@@ -154,7 +163,7 @@ nmap <silent> J <Plug>(coc-diagnostic-prev)
 nmap <silent> K <Plug>(coc-diagnostic-next) 
 
 " Show Documentation
-nnoremap <silent> D :call <SID>show_documentation()<CR> 
+nnoremap <silent> H :call <SID>show_documentation()<CR> 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -165,7 +174,7 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Code Completion
+" Code Completion -- Vanilla vim has a weird bug
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
@@ -193,3 +202,5 @@ xmap <silent> <C-s> <Plug>(coc-range-select)
 "let g:asmsyntax = 'nasm'
 "command! Maketags !ctags -R . "Make tags file - Legacy code indexing
 "TODO -- What is silent and all
+"nnoremap <leader>b :buffers<CR>:buffer<space>
+"TODO -- Have a function that updates Plug, Coc
