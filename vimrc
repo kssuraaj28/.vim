@@ -101,7 +101,7 @@ set clipboard=unnamedplus
 " =======================
 " Leader Key
 " =======================
-let mapleader = "\<Space>"
+let mapleader = "\<space>"
 
 " =======================
 " Custom Commands
@@ -130,7 +130,7 @@ let g:netrw_winsize = 20
 " Basic remaps
 nnoremap j gj
 nnoremap k gk
-
+nnoremap Y y$
 " One way to exit insert mode
 inoremap jj <esc>
 
@@ -143,14 +143,15 @@ nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 " Basic Code Navigation
 nnoremap <leader>e :Vex<CR>
 nnoremap <leader>f :Files<CR>
+"nnoremap <C-p> :Files<CR>
 nnoremap <leader>r :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>w :Windows<CR>
 
 " Symbol Navigation
-nnoremap <silent><nowait> <space>S  :<C-u>CocList -I symbols<cr> 
-nnoremap <silent><nowait> <space>s  :<C-u>CocList outline<cr>
-nnoremap <silent><nowait> <space>cl  :<C-u>CocList<cr> 
+nnoremap <silent><nowait> <leader>S  :<C-u>CocList -I symbols<cr> 
+nnoremap <silent><nowait> <leader>s  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader>cl  :<C-u>CocList<cr> 
 
 " Goto Definition, etc.
 nmap <silent> gd <Plug>(coc-definition)
