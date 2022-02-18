@@ -1,21 +1,32 @@
 " =======================
-" Installing Plug
+" Initialization
 " =======================
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+let completion_flag_file = data_dir . '/.vim_init_complete'
+
+if empty(glob(completion_flag_file))
+  silent execute '!bash '.data_dir.'/init_vim.sh'
+    if empty(glob(completion_flag_file))
+        "Here, initialization failed
+        autocmd VimEnter * echo "Started vanilla vim"
+        finish
+    endif
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " =======================
 " My Plugins
 " =======================
-call plug#begin('~/.vim/plugged')
+call plug#begin(data_dir.'/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
 call plug#end()
+
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
 
 " =======================
 " Basic Settings
@@ -64,19 +75,8 @@ set showmatch
 " =======================
 " Undo, Swaps, Backups
 " =======================
-if !isdirectory($HOME."/.vim")
-    call mkdir($HOME."/.vim", "", 0770)
-endif
-if !isdirectory($HOME."/.vim/undo")
-    call mkdir($HOME."/.vim/undo", "", 0700)
-endif
-
-if !isdirectory($HOME."/.vim/swp")
-    call mkdir($HOME."/.vim/swp", "", 0700)
-endif
-
-set directory=$HOME/.vim/swp//  
-set undodir=$HOME/.vim/undo//  
+let &directory = expand(data_dir).'/swp//'
+let &undodir = expand(data_dir).'/undo//'
 set undofile                    
 
 set nobackup
@@ -85,7 +85,7 @@ set nowritebackup
 " =======================
 " Colorscheme
 " =======================
-colorscheme gruvbox
+silent! colorscheme gruvbox
 set background=dark
 
 " =======================
@@ -112,8 +112,8 @@ command! -nargs=0 Format :call CocActionAsync('format')
 " =======================
 " Auto Commands
 " =======================
-autocmd BufNewFile  *.c      0r ~/.vim/skeleton.c
-autocmd BufNewFile  *.sh     0r ~/.vim/skeleton.sh | execute "normal! G"
+autocmd BufNewFile  *.c      execute ":0r ".data_dir."/skeleton.c"| execute "normal! ]]"
+autocmd BufNewFile  *.sh     execute ":0r ".data_dir."/skeleton.sh" | execute "normal! G"
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " =======================
@@ -125,17 +125,26 @@ let g:netrw_browse_split = 4
 let g:netrw_winsize = 20
 
 " =======================
+" Built-in Terminal Settings
+" =======================
+nnoremap <leader>t :term <CR><C-w>10-
+tnoremap <C-n> <C-w>N
+tnoremap <C-p> <C-w>""
+nnoremap <C-g> :aboveleft wincmd f<CR>
+
+" =======================
 " Key Remaps
 " =======================
 " Basic remaps
 nnoremap j gj
 nnoremap k gk
 nnoremap Y y$
+
+"Select everything
+nnoremap <C-a> ggVG
+
 " One way to exit insert mode
 inoremap jj <esc>
-
-" Built-in terminal
-nnoremap <leader>t :term<CR>
 
 " Local Change Directory
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
@@ -163,8 +172,8 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> J <Plug>(coc-diagnostic-prev)
 nmap <silent> K <Plug>(coc-diagnostic-next) 
 
-" Show Documentation
-nnoremap <silent> H :call <SID>show_documentation()<CR> 
+" Show Documentation -- TODO: Do we need this in insert mode?
+nnoremap <silent> <C-k> :call <SID>show_documentation()<CR> 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -188,9 +197,6 @@ nmap qf  <Plug>(coc-fix-current)
 " Symbol renaming, vscode style.
 nmap <F2> <Plug>(coc-rename)
 
-" Formatting selected code.
-xmap = <Plug>(coc-format-selected)
-nmap = <Plug>(coc-format-selected)
 
 " Visual Mode made better
 nmap <silent> <C-s> <Plug>(coc-range-select) 
@@ -205,3 +211,7 @@ xmap <silent> <C-s> <Plug>(coc-range-select)
 "TODO -- What is silent and all
 "nnoremap <leader>b :buffers<CR>:buffer<space>
 "TODO -- Have a function that updates Plug, Coc
+"
+" Formatting selected code.
+"xmap = <Plug>(coc-format-selected)
+"nmap = <Plug>(coc-format-selected)
