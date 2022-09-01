@@ -17,7 +17,7 @@ vim # vim will run the included init_vim.sh script to prepare everything
 
 During initialization, the script will check whether the necessary prerequisites are present on the system, and installs any that are missing and easy to install.
 
-This configuration has been tested on a fresh install of Arch Linux, and does seem to work.
+This configuration has been tested on a fresh install of Arch Linux and WSL2 on Windows, and does seem to work.
 
 ## Configuration overview
 I use [vim plug](https://github.com/junegunn/vim-plug) as my plugin manager (it seemed very straightforward to use). I like keeping things simple, and actively try to not clutter my vimrc with plugins. However, over my years of using vim as a code editor, these are the things that I find that I need the most:
