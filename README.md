@@ -17,12 +17,12 @@ vim # vim will run the included init_vim.sh script to prepare everything
 
 During initialization, the script will check whether the necessary prerequisites are present on the system, and installs any that are missing and easy to install.
 
-This configuration has been tested on a fresh install of Arch Linux and WSL2 on Windows, and does seem to work.
+This configuration has been tested on a fresh install of Arch Linux, Debian and WSL2 on Windows, and does seem to work.
 
 ## Configuration overview
 I use [vim plug](https://github.com/junegunn/vim-plug) as my plugin manager (it seemed very straightforward to use). I like keeping things simple, and actively try to not clutter my vimrc with plugins. However, over my years of using vim as a code editor, these are the things that I find that I need the most:
 
-* **Good Code Completion**: When working with large projects, this is something extremely sweet to have! Personally, I found that [vs-code](https://code.visualstudio.com/) does the best job at this. However, my puny brain just did not get used to the shortcuts of vs-code and more importantly, how much I had to use the mouse with vs-code. Here, [coc.nvim](https://github.com/neoclide/coc.nvim) is a plugin that saves the day for me, allowing me to use the best parts of vs-code in a native vim environment
+* **Good Code Completion**: When working with large projects, this is something extremely sweet to have! Personally, I found that [vs-code](https://code.visualstudio.com/) does the best job at this. However, I just did not get used to the shortcuts of vs-code and more importantly, how much I had to use the mouse with vs-code. Here, [coc.nvim](https://github.com/neoclide/coc.nvim) is a plugin that saves the day for me, allowing me to use the best parts of vs-code in a native vim environment. When used with the [coc snippets extension](https://github.com/neoclide/coc-snippets) and [example snippets](https://github.com/honza/vim-snippets), things work out very well!
 * **An inbuilt terminal**: With vim8, the inbuilt terminal is wonderful. With a little bit of tweaking, I have something that is all I could ask for.
 * **A Colourscheme**: Nothing wrong with getting vim looking very pretty! I personally use [gruvbox](https://github.com/morhetz/gruvbox)
 * **File Finding**: During my command line adventures, I seem to have been spoilt by [fzf](https://github.com/junegunn/fzf). Thus, it was inevitable that I use fzf's vim plugin for quick fuzzy file finding.
@@ -30,7 +30,7 @@ I use [vim plug](https://github.com/junegunn/vim-plug) as my plugin manager (it 
 
 ### My Plugins
 * [fzf](https://github.com/junegunn/fzf) and [fzf.vim](https://github.com/junegunn/fzf.vim): Fuzzy file finder to quickly search for and open files
-* [coc.nvim](https://github.com/neoclide/coc.nvim): For code completion. The best from vs-code 
+* [coc.nvim](https://github.com/neoclide/coc.nvim) and [vim-snippets](https://github.com/honza/vim-snippets): For code completion. 
 * [gruvbox](https://github.com/morhetz/gruvbox): A pretty colorscheme
 
 ## Some screenshots
