@@ -20,14 +20,14 @@ xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
 " Goto Definition, etc.
-nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gy <Plug>(coc-type-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> gr <Plug>(coc-references)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Error Navigation
-nnoremap <silent> J <Plug>(coc-diagnostic-prev)
-nnoremap <silent> K <Plug>(coc-diagnostic-next) 
+nmap <silent> J <Plug>(coc-diagnostic-prev)
+nmap <silent> K <Plug>(coc-diagnostic-next) 
 
 " Show Documentation -- TODO: Do we need this in insert mode?
 nnoremap <silent> <C-k> :call <SID>show_documentation()<CR> 
@@ -59,10 +59,10 @@ else
 endif
 
 " QuickFix
-nnoremap <Leader>qf <Plug>(coc-fix-current)
+nmap <Leader>qf <Plug>(coc-fix-current)
 
 " Symbol renaming, vscode style.
-nnoremap <F2> <Plug>(coc-rename)
+nmap <F2> <Plug>(coc-rename)
 
 
 " Visual Mode made better
