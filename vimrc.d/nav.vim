@@ -37,6 +37,7 @@ inoremap jj <esc>
 
 " Local Change Directory
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
+nnoremap <leader>.. :lcd ..<CR>:pwd<CR>
 
 "Move around selected text code
 vnoremap J :m '>+1<CR>gv=gv
