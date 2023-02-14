@@ -35,6 +35,10 @@ nnoremap <C-a> ggVG
 " One way to exit insert mode
 inoremap jj <esc>
 
+" Ctrl-u is useless
+inoremap <C-u> <nop>
+inoremap <C-w> <nop>
+
 " Local Change Directory
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 nnoremap <leader>.. :lcd ..<CR>:pwd<CR>
