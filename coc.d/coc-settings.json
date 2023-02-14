@@ -1,8 +1,0 @@
-{
-    "coc.preferences.formatOnSaveFiletypes": [
-        "c",
-        "rust",
-        "json"
-    ],
-    "coc.preferences.jumpCommandDUMMY": "vsplit",
-}
