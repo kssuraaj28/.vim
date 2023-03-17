@@ -43,6 +43,9 @@ inoremap <C-w> <nop>
 nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 nnoremap <leader>.. :lcd ..<CR>:pwd<CR>
 
+" Gotofile 
+nnoremap gf :top sp <cfile><CR>
+
 "Move around selected text code
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
