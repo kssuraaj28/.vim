@@ -44,7 +44,7 @@ nnoremap <leader>cd :lcd %:p:h<CR>:pwd<CR>
 nnoremap <leader>.. :lcd ..<CR>:pwd<CR>
 
 " Gotofile 
-nnoremap gf :top sp <cfile><CR>
+nnoremap gf :abo sp <cfile><CR>
 
 "Move around selected text code
 vnoremap J :m '>+1<CR>gv=gv
