@@ -1,0 +1,7 @@
+{
+    "[c][rust][cpp][json]": {
+        "semanticTokens.enable": true,
+        "coc.preferences.formatOnSave": true
+    },
+    "inlayHint.enable": false
+}
