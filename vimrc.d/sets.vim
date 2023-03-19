@@ -65,3 +65,9 @@ set mouse=n
 " =======================
 set clipboard=unnamedplus
 
+"" https://akrabat.com/using-vimrc-for-project-specific-settings/
+"" =======================
+"" Project specific settings
+"" =======================
+"set exrc
+"set secure

@@ -52,3 +52,6 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " Basic Code Navigation
 nnoremap <leader>e :Vex<CR>
+
+" Save on ZZ 
+nnoremap ZZ :w<CR>
