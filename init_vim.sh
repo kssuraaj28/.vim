@@ -99,6 +99,7 @@ mark_completion() {
 create_dirs
 exit_if_absent git
 exit_if_absent curl
+exit_if_absent rg
 
 install_plug
 install_node
