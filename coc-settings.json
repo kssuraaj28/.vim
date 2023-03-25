@@ -1,5 +1,5 @@
 {
-    "[c][rust][cpp][json]": {
+    "[json]": {
         "semanticTokens.enable": true,
         "coc.preferences.formatOnSave": true
     },
