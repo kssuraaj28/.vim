@@ -16,6 +16,15 @@ tnoremap <C-p> <C-w>""
 nnoremap <C-g> :aboveleft wincmd f<CR>
 
 " =======================
+" Window resizing Settings
+" =======================
+nnoremap <C-Down> <C-w>+
+nnoremap <C-Up> <C-w>- 
+nnoremap <C-Left> <C-w>< 
+nnoremap <C-Right> <C-w>> 
+nnoremap <silent> <C-w><C-w> :horizontal wincmd =<CR>
+
+" =======================
 " Custom Commands
 " =======================
 command! -nargs=* -complete=shellcmd Cmd new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args> 

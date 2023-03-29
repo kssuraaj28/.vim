@@ -65,6 +65,12 @@ set mouse=n
 " =======================
 set clipboard=unnamedplus
 
+" =======================
+" Windows don't change
+" =======================
+"set noequalalways
+set eadirection=hor
+
 "" https://akrabat.com/using-vimrc-for-project-specific-settings/
 "" =======================
 "" Project specific settings
