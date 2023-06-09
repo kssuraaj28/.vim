@@ -1,7 +1,7 @@
 " =======================
 " Root .vim directory
 " =======================
-let g:data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim' "TODO - neovim?
+let g:data_dir = expand('<sfile>:p:h')
 
 " =======================
 " Leader Key
