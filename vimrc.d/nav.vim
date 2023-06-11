@@ -8,14 +8,6 @@ let g:netrw_winsize = 20
 
 
 " =======================
-" Built-in Terminal Settings
-" =======================
-nnoremap <silent> <leader>t :term <CR><C-w>10-
-tnoremap <C-n> <C-w>N
-tnoremap <C-p> <C-w>""
-nnoremap <silent> <C-g> :aboveleft wincmd f<CR>
-
-" =======================
 " Window resizing Settings
 " =======================
 nnoremap <C-Down> <C-w>+
