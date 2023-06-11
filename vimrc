@@ -41,6 +41,10 @@ endif
 
 call plug#end()
 
+
+" =======================
+" Install a plugin if it does not have a directory associated with it.
+" =======================
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
