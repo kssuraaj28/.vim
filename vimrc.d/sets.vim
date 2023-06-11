@@ -48,7 +48,7 @@ set showmatch
 " =======================
 " Undo, Swaps, Backups
 " =======================
-let &directory = expand(data_dir).'/swp//'
+" let &directory = expand(data_dir).'/swp//'
 " let &undodir = expand(data_dir).'/undo//'
 " set undofile                    
 
