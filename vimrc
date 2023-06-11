@@ -34,7 +34,7 @@ Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
 
 " Source other plugins
-let s:extraplugs = g:data_dir . '/vimrc.d/extraplug.vim'
+let s:extraplugs = g:data_dir . '/extraplug.vim'
 if filereadable(expand(s:extraplugs))
     exe 'source' s:extraplugs
 endif
