@@ -38,10 +38,8 @@ I use [vim plug](https://github.com/junegunn/vim-plug) as my plugin manager (it 
 ![ss2](https://imgur.com/df2FcoU.png)
 
 ## Neovim support
-If you are a neovim user, you can still use this configuration. As mentioned in `:help nvim-from-vim`, use the following as your `init.vim` (neovim initialization file):
+If you are a neovim user, you can still use this configuration. Simply use the following as your `init.vim` (neovim initialization file):
 ```
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
 source ~/.vim/vimrc
 ```
 However, there are areas where neovim has significant differences from vim (such as their built-in terminal support). In such cases, one needs to handle both cases separately, if one wishes to achieve similar behaviour. Therefore, please let me know if you are using neovim with this configuration, and there are  other such differences that significantly affect your workflow!
