@@ -1,8 +1,16 @@
 " =======================
 " Basic Settings
 " =======================
+
 syntax on
+
+" I have no idea what this does
 filetype plugin on
+
+" =======================
+" Leader Key
+" =======================
+let mapleader = "\<space>"
 
 set nocompatible
 set ruler

@@ -87,16 +87,14 @@ install_node() {
     check_and_install cmd node 'curl -sL install-node.vercel.app/lts | sudo bash'
 }
 
-create_dirs() {
-    mkdir -p "$vim_data_dir" "$vim_data_dir/undo" "$vim_data_dir/swp" 
-}
 
 mark_completion() {
     local completion_flag_file="$vim_data_dir/.vim_init_complete"
     touch "$completion_flag_file"
 }
 
-create_dirs
+print_msg info "Starting dependency installation"
+
 exit_if_absent git
 exit_if_absent curl
 exit_if_absent rg

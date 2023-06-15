@@ -1,8 +1,3 @@
-" Coc Directory
-let g:coc_config_home = g:data_dir
-let g:coc_data_home = g:data_dir . '/coc.d'
-let g:coc_global_extensions = ['coc-json', 'coc-snippets', 'coc-clangd', 'coc-vimtex']
-
 " Symbol Navigation
 nnoremap <silent><nowait> <leader>S  :<C-u>CocList -I symbols<cr> 
 nnoremap <silent><nowait> <leader>s  :<C-u>CocList outline<cr>
