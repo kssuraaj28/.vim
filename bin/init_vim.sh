@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-vim_data_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+vim_data_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
 
 print_msg() {
