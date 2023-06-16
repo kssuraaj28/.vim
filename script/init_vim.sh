@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-vim_data_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+vim_data_dir=${vim_data_dir:-$script_dir/..}
 
 
 print_msg() {
@@ -78,7 +79,7 @@ check_and_install() {
 
 
 install_plug() {
-    local vimplug_file="$vim_data_dir/autoload/plug.vim"
+    local vimplug_file="autoload/plug.vim"
     local install_cmd="curl -fLo $vimplug_file --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     check_and_install file "$vimplug_file" "$install_cmd"
 }
@@ -89,10 +90,11 @@ install_node() {
 
 
 mark_completion() {
-    local completion_flag_file="$vim_data_dir/.vim_init_complete"
+    local completion_flag_file=".vim_init_complete"
     touch "$completion_flag_file"
 }
 
+cd $vim_data_dir
 print_msg info "Starting dependency installation"
 
 exit_if_absent git
