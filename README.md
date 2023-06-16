@@ -35,6 +35,12 @@ This configuration uses [vim plug](https://github.com/junegunn/vim-plug) as its 
 * [coc.nvim](https://github.com/neoclide/coc.nvim) and [vim-snippets](https://github.com/honza/vim-snippets): For code completion. 
 * [gruvbox](https://github.com/morhetz/gruvbox): A pretty colorscheme.
 
+### Highly Extensible
+This configuration is meant to be highly extensible.
+* You can choose to add 'local/temporary plugins' by adding a `Plug ....` line to `vimrc.d/extraplug.vim` (after creating it). This will not pollute your git repository.
+* The `miniplugs` directory contains (as the name suggests) small custom plugins. Adding a new custom plugin is as simple as creating a subdirectory of `miniplugs`, and it will be added to the `runtimepath` automatically.
+
+
 ## Some screenshots
 ![ss1](https://imgur.com/XidTaTK.png)
 ![ss2](https://imgur.com/df2FcoU.png)
