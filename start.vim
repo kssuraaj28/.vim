@@ -23,7 +23,6 @@ if empty(glob(s:completion_flag_file))
       echo "Started vanilla vim"
       finish
   endif
-  autocmd VimEnter * PlugInstall --sync | execute "source ".s:script_path
 endif
 
 
@@ -58,10 +57,9 @@ call plug#end()
 " =======================
 " Install a plugin if it does not have a directory associated with it.
 " =======================
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
-
+if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  PlugInstall --sync 
+endif
 
 " =======================
 " Source other settings (maps, etc.)
