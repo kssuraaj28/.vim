@@ -1,7 +1,7 @@
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd "$script_dir"/..
 
-start_vim=$(realpath start.vim)
-echo "source ${start_vim}" > ~/.vimrc
+source_line="source $(realpath start.vim)"
+echo "${source_line}" > ~/.vimrc
 mkdir -p ~/.config/nvim
-echo "source ${start_vim}" > ~/.config/nvim/init.vim
+echo "${source_line}" > ~/.config/nvim/init.vim
