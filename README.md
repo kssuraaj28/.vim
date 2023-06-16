@@ -22,9 +22,9 @@ There are multiple ways you can use this repository (wow!).
 4. **Sourcing `start.vim` after starting vim/nvim**: You can also just `:source start.vim` **after** you start vim.
 
 ## Configuration overview
-This configuration uses [vim plug](https://github.com/junegunn/vim-plug) as its plugin manager. It is straightforward to use, and keeps things simple. However, this configuration should be a decent place for programming, with the following features:
+This configuration uses [vim plug](https://github.com/junegunn/vim-plug) as its plugin manager. It is straightforward to use, and keeps things simple. This configuration should make vim a decent code editor with the following features:
 
-* **Good Code Completion**: When working with large projects, this is something extremely sweet to have! While [vs-code](https://code.visualstudio.com/) is one of the best at this, [coc.nvim](https://github.com/neoclide/coc.nvim) is a plugin that allows us to use the best parts of vs-code in a native vim environment. When used with the [coc snippets extension](https://github.com/neoclide/coc-snippets) and [example snippets](https://github.com/honza/vim-snippets), things work out very well!
+* **Good Code Completion**: When working with large projects, this is extremely good to have! [coc.nvim](https://github.com/neoclide/coc.nvim) uses the best parts of [vs-code](https://code.visualstudio.com/) (which has great extensions for code completion), and allows us to have these features in a native vim environment. When used with the [coc snippets extension](https://github.com/neoclide/coc-snippets) and [example snippets](https://github.com/honza/vim-snippets), things work out very well.
 * **An inbuilt terminal**: With vim8 / neovim, the inbuilt terminal is wonderful (with a little bit of tweaking, of course).
 * **A Colourscheme**: Nothing wrong with getting vim looking very pretty! The configuration uses [gruvbox](https://github.com/morhetz/gruvbox)
 * **File Finding**: This configuration uses the vim plugin of [fzf](https://github.com/junegunn/fzf) for quick fuzzy file finding.
