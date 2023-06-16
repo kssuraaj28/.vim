@@ -17,7 +17,7 @@ let &packpath = &runtimepath
 let s:completion_flag_file = data_dir . '/.vim_init_complete'
 
 if empty(glob(s:completion_flag_file))
-  execute '!bash '.g:data_dir.'/bin/init_vim.sh'
+  execute '!bash '.g:data_dir.'/script/init_vim.sh'
   if empty(glob(s:completion_flag_file))
       "Here, initialization failed
       echo "Started vanilla vim"

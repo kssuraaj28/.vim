@@ -13,29 +13,11 @@ This configuration has been tested on a fresh install of Arch Linux, Debian and 
 ## Getting it running
 There are multiple ways you can use this repository (wow!).
 
-1. **As your .vim directory**: Simply clone this repository as your (new) `~/.vim` directory, ensuring that you don't have an existing `~/.vimrc`.
+1. **As your .vim or .config/nvim directory**: For vim, simply clone this repository as your (new) `~/.vim` directory, ensuring that you don't have an existing `~/.vimrc`. For neovim, simply clone into `.config/nvim`.
 
-```
-# Make sure there isn't a ~/.vimrc and a ~/.vim directory
-git clone https://github.com/kssuraaj28/.vim ~/.vim  # Getting the configuration
-vim # vim will run the included init_vim.sh script to prepare everything
-```
+2. **Sourcing start.vim from your .vimrc and/or .config/nvim/init.vim**: A very simple way to do this would be to run `script/install.sh`, which does this for you.
 
-2. **As your .config/nvim directory**: Here, you can clone this into your `(new) ~/.config/nvim` directory.
-```
-git clone https://github.com/kssuraaj28/.vim ~/.config/nvim  
-nvim
-```
-
-3. **Sourcing start.vim from your .vimrc and/or .config/nvim/init.vim**: One way to do this would be to run the following commands:
-```
-git clone https://github.com/kssuraaj28/.vim vim-cfg
-cd  vim-cfg
-start_vim=$(realpath start.vim)
-echo "source $(start_vim) > ~/.vimrc
-mkdir -p .config/nvim
-echo "source $(start_vim) > ~/.config/nvim/init.vim
-```
+3. **Using vim -u start.vim**: If you already have an existing vim setup, and you want to try out this setup, this is a good option. You can even use an alias to make things easier: `alias myvim="vim -u $(realpath start.vim)"`.
 
 4. **Sourcing start.vim after starting vim/nvim**: You can also just `:source start.vim` **after** you start vim.
 
@@ -58,8 +40,6 @@ I use [vim plug](https://github.com/junegunn/vim-plug) as my plugin manager (it 
 ![ss2](https://imgur.com/df2FcoU.png)
 
 ## Neovim support
-If you are a neovim user, you can still use this configuration. Simply use the following as your `init.vim` (neovim initialization file):
-```
-source ~/.vim/vimrc
-```
-However, there are areas where neovim has significant differences from vim (such as their built-in terminal support). In such cases, one needs to handle both cases separately, if one wishes to achieve similar behaviour. Therefore, please let me know if you are using neovim with this configuration, and there are  other such differences that significantly affect your workflow!
+If you are a neovim user, you can still use this configuration as mentioned in the setup!
+
+However, there are areas where neovim has significant differences from vim (such as their built-in terminal support). In such cases, one needs to handle both cases separately if one wishes to achieve similar behaviour. Therefore, please let me know if you are using neovim with this configuration, and there are  other such differences that significantly affect your workflow!
