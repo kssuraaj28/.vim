@@ -4,7 +4,7 @@
 To use this configuration, simply clone this repository as your `~/.vim` directory (for vim) or `~/.config/nvim` directory (for neovim).
 
 ## The Big Idea
-This vim configuration does not require the user to manually 'run' any install script. The vimrc included in this configuration does this for you (by running the init\_vim.sh script). If the setup is successful, a marker is set, which prevents re-running the init script, thereby eliminating any overheads during normal use 
+This vim configuration does not require the user to manually 'run' any install script. The vimrc included in this configuration does this for you (by running the `init_vim.sh` script). If the setup is successful, a marker is set, which prevents re-running the init script, thereby eliminating any overheads during normal use 
 
 During initialization, the script will check whether the necessary prerequisites are present on the system, and installs any that are missing and easy to install.
 
