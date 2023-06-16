@@ -1,8 +1,0 @@
-{
-    "[json]": {
-        "semanticTokens.enable": true,
-        "coc.preferences.formatOnSave": true
-    },
-    "snippets.priority": 110,
-    "inlayHint.enable": false
-}
