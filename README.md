@@ -1,7 +1,7 @@
 # My Standalone Vim configuration
 
 ## TL;DR
-To use this configuration, simply clone this repository as your ~/.vim directory
+To use this configuration, simply clone this repository as your ~/.vim directory (for vim) or `~/.config/nvim` directory (for neovim).
 
 ## The Big Idea
 This vim configuration does not require the user to manually 'run' any install script. The vimrc included in this configuration does this for you (by running the init\_vim.sh script). If the setup is successful, a marker is set, which prevents re-running the init script, thereby eliminating any overheads during normal use 
