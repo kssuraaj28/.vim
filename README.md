@@ -6,8 +6,14 @@ To use this configuration, simply clone this repository as your ~/.vim directory
 ## The Big Idea
 This vim configuration does not require the user to manually 'run' any install script. The vimrc included in this configuration does this for you (by running the init\_vim.sh script). If the setup is successful, a marker is set, which prevents re-running the init script, thereby eliminating any overheads during normal use 
 
+During initialization, the script will check whether the necessary prerequisites are present on the system, and installs any that are missing and easy to install.
+
+This configuration has been tested on a fresh install of Arch Linux, Debian and WSL2 on Windows, and does seem to work.
+
 ## Getting it running
-This repository is meant to be your .vim directory. One way to do this would be:
+There are multiple ways you can use this repository (wow!).
+
+1. **As your .vim directory**: Simply clone this repository as your (new) `~/.vim` directory, ensuring that you don't have an existing `~/.vimrc`.
 
 ```
 # Make sure there isn't a ~/.vimrc and a ~/.vim directory
@@ -15,9 +21,23 @@ git clone https://github.com/kssuraaj28/.vim ~/.vim  # Getting the configuration
 vim # vim will run the included init_vim.sh script to prepare everything
 ```
 
-During initialization, the script will check whether the necessary prerequisites are present on the system, and installs any that are missing and easy to install.
+2. **As your .config/nvim directory**: Here, you can clone this into your `(new) ~/.config/nvim` directory.
+```
+git clone https://github.com/kssuraaj28/.vim ~/.config/nvim  
+nvim
+```
 
-This configuration has been tested on a fresh install of Arch Linux, Debian and WSL2 on Windows, and does seem to work.
+3. **Sourcing start.vim from your .vimrc and/or .config/nvim/init.vim**: One way to do this would be to run the following commands:
+```
+git clone https://github.com/kssuraaj28/.vim vim-cfg
+cd  vim-cfg
+start_vim=$(realpath start.vim)
+echo "source $(start_vim) > ~/.vimrc
+mkdir -p .config/nvim
+echo "source $(start_vim) > ~/.config/nvim/init.vim
+```
+
+4. **Sourcing start.vim after starting vim/nvim**: You can also just `:source start.vim` **after** you start vim.
 
 ## Configuration overview
 I use [vim plug](https://github.com/junegunn/vim-plug) as my plugin manager (it seemed very straightforward to use). I like keeping things simple, and actively try to not clutter my vimrc with plugins. However, over my years of using vim as a code editor, these are the things that I find that I need the most:
