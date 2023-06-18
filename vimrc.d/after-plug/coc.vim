@@ -65,7 +65,7 @@ xmap <silent> <C-s> <Plug>(coc-range-select)
 
 
 " Command to format things
-command! -nargs=0 Format :call CocActionAsync('format')
+command -nargs=0 Format :call CocActionAsync('format')
 
 
 " Highlight hovered text
