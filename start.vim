@@ -37,8 +37,8 @@ endfor
 " =======================
 " Install plugins
 " =======================
+"
 let g:plugged_root_dir = g:data_dir.'/plugged/'
-
 "For small custom plugins
 let g:mini_plug_dir = g:data_dir.'/miniplugs/'
 
@@ -72,8 +72,11 @@ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 
 " =======================
-" Source other settings (maps, etc.)
+" Source other settings (maps, autocmds.)
 " =======================
+augroup myvimrc
+au!
 for vimfile in split(glob(g:data_dir . '/vimrc.d/after-plug/*.vim' ), '\n')
     exe 'source' vimfile
 endfor
+augroup END
