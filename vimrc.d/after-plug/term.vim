@@ -23,3 +23,10 @@ tnoremap <silent> <C-j> <Down>
 tnoremap <silent> <C-k> <Up>
 tnoremap <silent> <C-h> <Left>
 tnoremap <silent> <C-l> <Right>
+
+" When you are in the shell. This is not great.. This uses system clipboard.
+" Using line-continuation
+tnoremap <silent> <leader>cd  
+            \pwd  \| xsel -p<CR>
+            \<C-\><C-N>:execute 'cd '.expand(@*)<CR>
+            \:pwd<CR>i
