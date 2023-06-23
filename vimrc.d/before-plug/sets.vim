@@ -2,6 +2,7 @@
 " Basic Settings
 " =======================
 
+" This actually makes Syntax autocommands...
 syntax on
 
 " I have no idea what this does
