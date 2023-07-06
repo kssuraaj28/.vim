@@ -37,11 +37,8 @@ endfor
 " =======================
 " Install plugins
 " =======================
-"
-let g:plugged_root_dir = g:data_dir.'/plugged/'
-"For small custom plugins
-let g:mini_plug_dir = g:data_dir.'/miniplugs/'
 
+let g:plugged_root_dir = g:data_dir.'/plugged/'
 call plug#begin(g:plugged_root_dir)
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -49,17 +46,21 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
-
-" Source custom mini plugins 
-for miniplug in split(glob(g:mini_plug_dir . '/*' ), '\n')
-    Plug miniplug
-endfor
+Plug 'tpope/vim-fugitive'
 
 " Source other (private) plugins, which are mentioned in vimrc.d/extraplug.vim
 let s:extraplugs = g:data_dir . '/vimrc.d/extraplug.vim'
 if filereadable(expand(s:extraplugs))
     execute 'source' s:extraplugs
 endif
+
+
+"For small custom plugins
+let g:mini_plug_dir = g:data_dir.'/miniplugs/'
+for miniplug in split(glob(g:mini_plug_dir . '/*' ), '\n')
+    Plug miniplug
+endfor
+
 
 call plug#end()
 

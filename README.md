@@ -29,11 +29,13 @@ This configuration uses [vim plug](https://github.com/junegunn/vim-plug) as its 
 * **A Colourscheme**: Nothing wrong with getting vim looking very pretty! The configuration uses [gruvbox](https://github.com/morhetz/gruvbox)
 * **File Finding**: This configuration uses the vim plugin of [fzf](https://github.com/junegunn/fzf) for quick fuzzy file finding.
 * **Filetree exploration**: With a little bit of massaging, vim's netrw file explorer seems to work well.
+* **Git integration**: This configuration uses the [vim-fugitive](https://github.com/tpope/vim-fugitive) plugin for git integration.
 
 ### My (External) Plugins
 * [fzf](https://github.com/junegunn/fzf) and [fzf.vim](https://github.com/junegunn/fzf.vim): Fuzzy file finder to quickly search for and open files.
 * [coc.nvim](https://github.com/neoclide/coc.nvim) and [vim-snippets](https://github.com/honza/vim-snippets): For code completion. 
 * [gruvbox](https://github.com/morhetz/gruvbox): A pretty colorscheme.
+* [vim-fugitive](https://github.com/tpope/vim-fugitive): Git integration.
 
 ### Highly Extensible
 This configuration is meant to be highly extensible.
