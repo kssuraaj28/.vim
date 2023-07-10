@@ -34,6 +34,8 @@ set splitright
 set updatetime=300
 set shortmess+=c
 
+set nohls
+
 "set number
 "set relativenumber
 

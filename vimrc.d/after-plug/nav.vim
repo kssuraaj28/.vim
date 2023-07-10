@@ -1,9 +1,4 @@
 " =======================
-" Removing highlight
-" =======================
-nnoremap <silent> <leader>h :nohlsearch<CR>
- 
-" =======================
 " Window resizing Settings
 " =======================
 nnoremap <C-Down> <C-w>+
