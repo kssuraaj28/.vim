@@ -37,6 +37,9 @@ nnoremap gf :abo sp <cfile><CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+"Mass rename
+nnoremap <leader>n :%s/\<<C-r><C-w>\>//g<Left><Left>
+
 " Basic Code Navigation
 nnoremap <leader>e :Vex<CR>
 
