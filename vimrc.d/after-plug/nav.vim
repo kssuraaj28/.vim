@@ -42,3 +42,6 @@ nnoremap <leader>e :Vex<CR>
 
 " Save on ZZ 
 nnoremap ZZ :w<CR>
+
+" Oh no, I lost my cursor!
+nnoremap <silent> <leader>h <Cmd>setl cursorcolumn! \| setl cursorline!<CR>
