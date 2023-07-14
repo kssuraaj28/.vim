@@ -18,8 +18,8 @@ nnoremap Y y$
 "Select everything
 nnoremap <C-a> ggVG
 
-" One way to exit insert mode
-noremap! jk <esc>
+" One way to exit insert/command mode
+noremap! jk <C-c>
 
 " Ctrl-u is useless
 inoremap <C-u> <nop>
