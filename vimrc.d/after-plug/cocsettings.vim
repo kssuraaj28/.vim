@@ -4,5 +4,4 @@
 call coc#config("snippets.priority",110)
 call coc#config("inlayHint.enable","false")
 call coc#config("coc.preferences.formatOnSaveFiletypes", ["cpp","json","c"])
-call coc#config("coc.preferences.jumpCommand", "vsplit")
 " TODO: Can we have the two previous things in the same call?
