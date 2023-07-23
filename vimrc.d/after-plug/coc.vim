@@ -1,7 +1,7 @@
 " Symbol Navigation
-nnoremap <silent><nowait> <leader>S  :<C-u>CocList -I symbols<cr> 
-nnoremap <silent><nowait> <leader>s  :<C-u>CocList outline<cr>
-nnoremap <silent><nowait> <leader>cl  :<C-u>CocList<cr> 
+nnoremap <silent><nowait> <leader>S  <Cmd>CocList -I symbols<cr> 
+nnoremap <silent><nowait> <leader>s  <Cmd>CocList outline<cr>
+nnoremap <silent><nowait> <leader>cl  <Cmd>CocList<cr> 
 
 " Function objects, class objects, etc.
 xmap if <Plug>(coc-funcobj-i)
@@ -24,7 +24,7 @@ nmap <silent> <leader>j <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>k <Plug>(coc-diagnostic-next)
 
 " Show Documentation -- TODO: Do we need this in insert mode?
-nnoremap <silent> <C-k> :call <SID>show_documentation()<CR> 
+nnoremap <silent> <C-k> <Cmd>call <SID>show_documentation()<CR> 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
