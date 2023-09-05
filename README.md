@@ -8,7 +8,7 @@ This vim configuration does not require the user to manually 'run' any install s
 
 During initialization, the script will check whether the necessary prerequisites are present on the system, and installs any that are missing and easy to install.
 
-This configuration has been tested on a fresh install of Arch Linux, Debian and WSL2 on Windows, and does seem to work.
+This configuration has been tested on a fresh install of Arch Linux, Debian, MacOS, and even WSL2 on Windows, and does seem to work.
 
 ## Getting it running
 There are multiple ways you can use this repository (wow!).
