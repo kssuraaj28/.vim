@@ -24,7 +24,7 @@ nmap <silent> <leader>j <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>k <Plug>(coc-diagnostic-next)
 
 " Show Documentation -- TODO: Do we need this in insert mode?
-nnoremap <silent> <C-k> <Cmd>call <SID>show_documentation()<CR> 
+nnoremap <silent> <leader>d <Cmd>call <SID>show_documentation()<CR> 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
