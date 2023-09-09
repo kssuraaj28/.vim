@@ -88,7 +88,7 @@ install_node() {
     local node_install_prefix=$vim_data_dir/coc.d/node_install
     rm -rf "$node_install_prefix"
     mkdir -p "$node_install_prefix"
-    curl -sL install-node.vercel.app/lts | bash -s -- --prefix=$node_install_prefix
+    curl -sL install-node.vercel.app/lts | bash -s -- --prefix=$node_install_prefix --yes
 }
 
 
