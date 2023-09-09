@@ -9,7 +9,7 @@ if has('nvim')
     tnoremap <C-w>k <C-\><C-N><C-w>k
     tnoremap <C-w>l <C-\><C-N><C-w>l
     autocmd BufEnter * if &buftype ==# 'terminal' | startinsert! | endif
-    "TODO: Can we make this better?
+    "TODO: Can we somehow source a few functions when we open terminal?
 else
     " Running in vim
     nnoremap <silent> <leader>t <Cmd>rightbelow term <CR><C-w>10-

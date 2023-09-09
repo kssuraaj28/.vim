@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -e
+#TODO: Ideally, we should have this in vimscript
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 vim_data_dir=${vim_data_dir:-$script_dir/..}
-
 
 print_msg() {
     local red
@@ -79,13 +79,16 @@ check_and_install() {
 
 
 install_plug() {
-    local vimplug_file="autoload/plug.vim"
+    local vimplug_file="$vim_data_dir/autoload/plug.vim"
     local install_cmd="curl -fLo $vimplug_file --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     check_and_install file "$vimplug_file" "$install_cmd"
 }
 
 install_node() {
-    check_and_install cmd node 'curl -sL install-node.vercel.app/lts | sudo bash'
+    local node_install_prefix=$vim_data_dir/coc.d/node_install
+    rm -rf "$node_install_prefix"
+    mkdir -p "$node_install_prefix"
+    curl -sL install-node.vercel.app/lts | bash -s -- --prefix=$node_install_prefix
 }
 
 
@@ -99,6 +102,7 @@ print_msg info "Starting dependency installation"
 
 exit_if_absent git
 exit_if_absent curl
+exit_if_absent bash
 
 install_plug
 install_node
