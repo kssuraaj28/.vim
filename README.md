@@ -30,18 +30,34 @@ This configuration uses [vim plug](https://github.com/junegunn/vim-plug) as its 
 * **File Finding**: This configuration uses the vim plugin of [fzf](https://github.com/junegunn/fzf) for quick fuzzy file finding.
 * **Filetree exploration**: With a little bit of massaging, vim's netrw file explorer seems to work well.
 * **Git integration**: This configuration uses the [vim-fugitive](https://github.com/tpope/vim-fugitive) plugin for git integration.
-
-### My (External) Plugins
-* [fzf](https://github.com/junegunn/fzf) and [fzf.vim](https://github.com/junegunn/fzf.vim): Fuzzy file finder to quickly search for and open files.
-* [coc.nvim](https://github.com/neoclide/coc.nvim) and [vim-snippets](https://github.com/honza/vim-snippets): For code completion. 
-* [gruvbox](https://github.com/morhetz/gruvbox): A pretty colorscheme.
-* [vim-fugitive](https://github.com/tpope/vim-fugitive): Git integration.
+* **Tmux Integration**: Using [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) plugin allows for a uniform keybindings for vim and tmux
 
 ### Highly Extensible
 This configuration is meant to be highly extensible.
 * You can choose to add 'local/temporary plugins' by adding a `Plug ....` line to `vimrc.d/extraplug.vim` (after creating it). This will not pollute your git repository.
 * The `miniplugs` directory contains (as the name suggests) small custom plugins. Adding a new custom plugin is as simple as creating a subdirectory of `miniplugs`, and it will be added to the `runtimepath` automatically.
 
+### Tmux Support
+In order to intergrate tmux with the same keybindings, include the following in your tmux configuration:
+```
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?)(diff)?$'"
+
+bind-key -n C-w if-shell "$is_vim" "send-keys C-w" "switch-client -Tvimtable"
+bind-key -Tvimtable 'h' select-pane -L
+bind-key -Tvimtable 'j' select-pane -D
+bind-key -Tvimtable 'k' select-pane -U
+bind-key -Tvimtable 'l' select-pane -R
+
+bind-key -n 'C-h' if-shell "$is_vim" 'send-keys C-h'  'resize-pane -L'
+bind-key -n 'C-j' if-shell "$is_vim" 'send-keys C-j'  'resize-pane -D'
+bind-key -n 'C-k' if-shell "$is_vim" 'send-keys C-k'  'resize-pane -U'
+bind-key -n 'C-l' if-shell "$is_vim" 'send-keys C-l'  'resize-pane -R'
+
+bind-key -Tvimtable 's' split-window -v
+bind-key -Tvimtable 'v' split-window -h
+bind-key -Tvimtable 'C-w' send-keys C-w
+```
 
 ## Some screenshots
 ![ss1](https://imgur.com/XidTaTK.png)

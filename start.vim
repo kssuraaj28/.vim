@@ -47,6 +47,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Source other (private) plugins, which are mentioned in vimrc.d/extraplug.vim
 let s:extraplugs = g:data_dir . '/vimrc.d/extraplug.vim'

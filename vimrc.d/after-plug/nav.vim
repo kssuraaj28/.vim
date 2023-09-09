@@ -1,11 +1,3 @@
-" =======================
-" Window resizing Settings
-" =======================
-nnoremap <C-j> <C-w>+
-nnoremap <C-k> <C-w>- 
-nnoremap <C-h> <C-w>< 
-nnoremap <C-l> <C-w>> 
-
 if ! has('nvim')
     "neovim does not seem to have :horizontal
     nnoremap <silent> <C-w><C-w> <Cmd>horizontal wincmd =<CR>
