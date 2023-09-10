@@ -1,7 +1,7 @@
-nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
-nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
-nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
+nnoremap <silent> <C-w>h <Cmd>TmuxNavigateLeft<cr>
+nnoremap <silent> <C-w>j <Cmd>TmuxNavigateDown<cr>
+nnoremap <silent> <C-w>k <Cmd>TmuxNavigateUp<cr>
+nnoremap <silent> <C-w>l <Cmd>TmuxNavigateRight<cr>
 
 nnoremap <C-j> <C-w>+
 nnoremap <C-k> <C-w>- 

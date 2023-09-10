@@ -11,6 +11,8 @@ if has('nvim')
     tnoremap <C-w>l <Cmd>let b:reinsert=1<CR><Cmd>wincmd l<CR>
 
     function s:NvimTerminalReenter()
+        " There is still a slight bug when  you switch between terminals
+        " However, it should be okay
         if ! &buftype ==# "terminal"
             return
         endif
