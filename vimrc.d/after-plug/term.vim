@@ -2,13 +2,24 @@
 " Built-in Terminal Settings
 " =======================
 if has('nvim')
+
     nnoremap <silent> <leader>t <Cmd>15sp<CR><Cmd>term<CR>i
     tnoremap <C-n> <C-\><C-n>
-    tnoremap <C-w>h <C-\><C-N><C-w>h
-    tnoremap <C-w>j <C-\><C-N><C-w>j
-    tnoremap <C-w>k <C-\><C-N><C-w>k
-    tnoremap <C-w>l <C-\><C-N><C-w>l
-    autocmd BufEnter * if &buftype ==# 'terminal' | startinsert! | endif
+    tnoremap <C-w>h <Cmd>let b:reinsert=1<CR><Cmd>wincmd h<CR>
+    tnoremap <C-w>j <Cmd>let b:reinsert=1<CR><Cmd>wincmd j<CR>
+    tnoremap <C-w>k <Cmd>let b:reinsert=1<CR><Cmd>wincmd k<CR>
+    tnoremap <C-w>l <Cmd>let b:reinsert=1<CR><Cmd>wincmd l<CR>
+
+    function s:NvimTerminalReenter()
+        if ! &buftype ==# "terminal"
+            return
+        endif
+        if exists('b:reinsert') && b:reinsert == 1
+            startinsert!
+            unlet b:reinsert
+        endif
+    endfunction
+    autocmd BufEnter * call s:NvimTerminalReenter()
     "TODO: Can we somehow source a few functions when we open terminal?
 else
     " Running in vim
