@@ -54,8 +54,8 @@ bind-key -n 'C-j' if-shell "$is_vim" 'send-keys C-j'  'resize-pane -D'
 bind-key -n 'C-k' if-shell "$is_vim" 'send-keys C-k'  'resize-pane -U'
 bind-key -n 'C-l' if-shell "$is_vim" 'send-keys C-l'  'resize-pane -R'
 
-bind-key -Tvimtable 's' split-window -v
-bind-key -Tvimtable 'v' split-window -h
+bind-key -Tvimtable 's' split-window -v -c "#{pane_current_path}"
+bind-key -Tvimtable 'v' split-window -h -c "#{pane_current_path}"
 bind-key -Tvimtable 'C-w' send-keys C-w
 ```
 
