@@ -2,8 +2,9 @@
 " Built-in Terminal Settings
 " =======================
 if has('nvim')
-
+    "TODO: Refactor
     nnoremap <silent> <leader>t <Cmd>15sp<CR><Cmd>term<CR>i
+    nnoremap <silent> <leader>; <Cmd>15sp<CR><Cmd>terminal %:p<CR>
     tnoremap <C-n> <C-\><C-n>
     tnoremap <C-w>h <Cmd>let b:reinsert=1<CR><Cmd>wincmd h<CR>
     tnoremap <C-w>j <Cmd>let b:reinsert=1<CR><Cmd>wincmd j<CR>
@@ -23,9 +24,12 @@ if has('nvim')
     endfunction
     autocmd BufEnter * call s:NvimTerminalReenter()
     "TODO: Can we somehow source a few functions when we open terminal?
+    
+   
 else
     " Running in vim
     nnoremap <silent> <leader>t <Cmd>rightbelow term <CR><C-w>10-
+    nnoremap <silent> <leader>; <Cmd>rightbelow terminal %:p<CR>
     tnoremap <C-n> <C-w>N
     tnoremap <C-p> <C-w>""
     " TODO: Why do I have this..
