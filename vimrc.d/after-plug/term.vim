@@ -3,7 +3,7 @@
 " =======================
 if has('nvim')
     "TODO: Refactor
-    nnoremap <silent> <leader>t <Cmd>15sp<CR><Cmd>term<CR>i
+    nnoremap <silent> <leader>t <Cmd>15sp<CR><Cmd>term<CR>
     nnoremap <silent> <leader>; <Cmd>15sp<CR><Cmd>terminal %:p<CR>
     tnoremap <C-n> <C-\><C-n>
     tnoremap <C-w>h <Cmd>let b:reinsert=1<CR><Cmd>wincmd h<CR>
@@ -23,6 +23,7 @@ if has('nvim')
         endif
     endfunction
     autocmd BufEnter * call s:NvimTerminalReenter()
+    autocmd TermOpen * startinsert
     "TODO: Can we somehow source a few functions when we open terminal?
     
    
