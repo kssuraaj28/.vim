@@ -6,10 +6,14 @@ if has('nvim')
     nnoremap <silent> <leader>t <Cmd>15sp<CR><Cmd>term<CR>
     nnoremap <silent> <leader>; <Cmd>15sp<CR><Cmd>terminal %:p<CR>
     tnoremap <C-n> <C-\><C-n>
+
     tnoremap <C-w>h <Cmd>let b:reinsert=1<CR><Cmd>wincmd h<CR>
     tnoremap <C-w>j <Cmd>let b:reinsert=1<CR><Cmd>wincmd j<CR>
     tnoremap <C-w>k <Cmd>let b:reinsert=1<CR><Cmd>wincmd k<CR>
     tnoremap <C-w>l <Cmd>let b:reinsert=1<CR><Cmd>wincmd l<CR>
+    tnoremap <C-w>s <Cmd>let b:reinsert=1<CR><Cmd>wincmd s<CR>
+    tnoremap <C-w>n <Cmd>let b:reinsert=1<CR><Cmd>wincmd n<CR>
+    tnoremap <C-w>v <Cmd>let b:reinsert=1<CR><Cmd>wincmd v<CR>
 
     function s:NvimTerminalReenter()
         " There is still a slight bug when  you switch between terminals
