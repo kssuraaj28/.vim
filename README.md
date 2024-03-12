@@ -35,7 +35,7 @@ This configuration uses [vim plug](https://github.com/junegunn/vim-plug) as its 
 ### Highly Extensible
 This configuration is meant to be highly extensible.
 * You can choose to add 'local/temporary plugins' by adding a `Plug ....` line to `vimrc.d/extraplug.vim` (after creating it). This will not pollute your git repository.
-* The `miniplugs` directory contains (as the name suggests) small custom plugins. Adding a new custom plugin is as simple as creating a subdirectory of `miniplugs`, and it will be added to the `runtimepath` automatically.
+* You can create a `miniplugs` directory to contain small custom plugins. Adding a new custom plugin is as simple as creating a subdirectory of `miniplugs`, and it will be added to the `runtimepath` automatically.
 
 ### Tmux Support
 In order to intergrate tmux with the same keybindings, include the following in your tmux configuration:
