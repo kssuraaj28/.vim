@@ -103,6 +103,7 @@ print_msg info "Starting dependency installation"
 exit_if_absent git
 exit_if_absent curl
 exit_if_absent bash
+exit_if_absent rg
 
 install_plug
 install_node
