@@ -4,7 +4,7 @@
 if has('nvim')
     "TODO: Refactor
     nnoremap <silent> <leader>t <Cmd>15sp<CR><Cmd>term<CR>
-    nnoremap <silent> <leader>; <Cmd>15sp<CR><Cmd>terminal %:p<CR>
+    nnoremap <silent> <leader>; <Cmd>15sp<CR><Cmd>terminal "%:p"<CR>
     tnoremap <C-n> <C-\><C-n>
 
     tnoremap <C-w>h <Cmd>let b:reinsert=1<CR><Cmd>wincmd h<CR>
@@ -34,7 +34,7 @@ if has('nvim')
 else
     " Running in vim
     nnoremap <silent> <leader>t <Cmd>rightbelow term <CR><C-w>10-
-    nnoremap <silent> <leader>; <Cmd>rightbelow terminal %:p<CR>
+    nnoremap <silent> <leader>; <Cmd>rightbelow terminal "%:p"<CR>
     tnoremap <C-n> <C-w>N
     tnoremap <C-p> <C-w>""
     " TODO: Why do I have this..
