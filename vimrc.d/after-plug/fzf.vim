@@ -7,3 +7,4 @@ nnoremap <leader>g <Cmd>GFiles<CR>
 nnoremap <leader>r <Cmd>Rg<CR>
 nnoremap <leader>b <Cmd>Buffers<CR>
 nnoremap <leader>w <Cmd>Windows<CR>
+nnoremap <leader>cm <Cmd>Commands<CR>
