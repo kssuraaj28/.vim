@@ -40,8 +40,3 @@ else
     " TODO: Why do I have this..
     nnoremap <silent> <C-g> <Cmd>aboveleft wincmd f<CR>
 endif
-
-tnoremap <silent> <C-j> <Down>
-tnoremap <silent> <C-k> <Up>
-tnoremap <silent> <C-h> <Left>
-tnoremap <silent> <C-l> <Right>
