@@ -4,14 +4,6 @@ if ! has('nvim')
 endif
 
 " =======================
-" Command line remaps
-" =======================
-noremap! <C-j> <Down>
-noremap! <C-k> <Up>
-noremap! <C-h> <Left>
-noremap! <C-l> <Right>
-
-" =======================
 " Key Remaps
 " =======================
 " Basic remaps
