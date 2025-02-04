@@ -16,6 +16,9 @@ nnoremap <C-a> ggVG
 
 " One way to exit insert/command mode
 noremap! jk <C-c>
+noremap! jK <C-c>
+noremap! JK <C-c>
+noremap! Jk <C-c>
 
 " Ctrl-u is useless
 inoremap <C-u> <nop>
