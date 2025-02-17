@@ -43,11 +43,13 @@ call plug#begin(g:plugged_root_dir)
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
+Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
+if empty($DISABLE_COCVIM)
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 " Source other (private) plugins, which are mentioned in vimrc.d/extraplug.vim
 let s:extraplugs = g:data_dir . '/vimrc.d/extraplug.vim'
