@@ -47,9 +47,7 @@ Plug 'morhetz/gruvbox'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
-if empty($DISABLE_COCVIM)
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-endif
+Plug 'neoclide/coc.nvim', empty($DISABLE_COCVIM) ? {'branch': 'release'} : { 'on' : [] }
 
 " Source other (private) plugins, which are mentioned in vimrc.d/extraplug.vim
 let s:extraplugs = g:data_dir . '/vimrc.d/extraplug.vim'
