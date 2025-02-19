@@ -33,6 +33,7 @@ This configuration uses [vim plug](https://github.com/junegunn/vim-plug) as its 
 * **Filetree exploration**: With a little bit of massaging, vim's netrw file explorer seems to work well.
 * **Git integration**: This configuration uses the [vim-fugitive](https://github.com/tpope/vim-fugitive) plugin for git integration.
 * **Tmux Integration**: Using [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) plugin allows for a uniform keybindings for vim and tmux
+* **Unix Commands**: [vim-eunuch](https://github.com/tpope/vim-eunuch/) lets you perform common unix commands like `mv`, `rm`, etc. from within vim
 
 ### Highly Extensible
 This configuration is meant to be highly extensible.
