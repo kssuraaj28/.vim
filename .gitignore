@@ -1,4 +1,4 @@
-.vim_init_complete
+.plug_init_complete
 .netrwhist
 autoload
 bundle
