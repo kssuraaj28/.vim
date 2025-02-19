@@ -40,26 +40,7 @@ This configuration is meant to be highly extensible.
 * You can create a `miniplugs` directory to contain small custom plugins. Adding a new custom plugin is as simple as creating a subdirectory of `miniplugs`, and it will be added to the `runtimepath` automatically.
 
 ### Tmux Support
-In order to intergrate tmux with the same keybindings, include the following in your tmux configuration:
-```
-is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
-    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?)(diff)?$'"
-
-bind-key -n C-w if-shell "$is_vim" "send-keys C-w" "switch-client -Tvimtable"
-bind-key -Tvimtable 'h' select-pane -L
-bind-key -Tvimtable 'j' select-pane -D
-bind-key -Tvimtable 'k' select-pane -U
-bind-key -Tvimtable 'l' select-pane -R
-
-bind-key -n 'C-h' if-shell "$is_vim" 'send-keys C-h'  'resize-pane -L'
-bind-key -n 'C-j' if-shell "$is_vim" 'send-keys C-j'  'resize-pane -D'
-bind-key -n 'C-k' if-shell "$is_vim" 'send-keys C-k'  'resize-pane -U'
-bind-key -n 'C-l' if-shell "$is_vim" 'send-keys C-l'  'resize-pane -R'
-
-bind-key -Tvimtable 's' split-window -v -c "#{pane_current_path}"
-bind-key -Tvimtable 'v' split-window -h -c "#{pane_current_path}"
-bind-key -Tvimtable 'C-w' send-keys C-w
-```
+In order to intergrate tmux with the same keybindings, the configuration appends settings to the tmux configuration file (`~/.tmux.conf`) if it doesn't exist.
 
 ## Some screenshots
 ![ss1](https://imgur.com/XidTaTK.png)
