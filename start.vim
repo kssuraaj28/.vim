@@ -26,59 +26,28 @@ if empty(glob(s:completion_flag_file))
 endif
 
 
-" =======================
-" Source some settings. Keep this to minimal prerequites
-" =======================
-for vimfile in split(glob(g:data_dir . '/vimrc.d/before-plug/*.vim' ), '\n')
-    exe 'source' vimfile
-endfor
+" We clean the myvimrc autogroup
+augroup myvimrc | au!
+function! s:read_all_files(file)
+    for vimfile in split(glob(g:data_dir . '/vimrc.d/**/'. a:file ), '\n')
+        augroup myvimrc
+        exe 'source' vimfile
+        augroup END
+    endfor
+endfunction
 
+" Pre config
+call s:read_all_files('pre.vim')
 
-" =======================
-" Install plugins
-" =======================
-
+" Plugins
 let g:plugged_root_dir = g:data_dir.'/plugged/'
 call plug#begin(g:plugged_root_dir)
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
-Plug 'honza/vim-snippets'
-Plug 'tpope/vim-fugitive'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'neoclide/coc.nvim', empty($DISABLE_COCVIM) ? {'branch': 'release'} : { 'on' : [] }
-
-" Source other (private) plugins, which are mentioned in vimrc.d/extraplug.vim
-let s:extraplugs = g:data_dir . '/vimrc.d/extraplug.vim'
-if filereadable(expand(s:extraplugs))
-    execute 'source' s:extraplugs
-endif
-
-
-"For small custom plugins
-let g:mini_plug_dir = g:data_dir.'/miniplugs/'
-for miniplug in split(glob(g:mini_plug_dir . '/*' ), '\n')
-    Plug miniplug
-endfor
-
-
+call s:read_all_files('plug.vim')
 call plug#end()
 
-
-" =======================
-" Install a plugin if it does not have a directory associated with it.
-" =======================
 if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   PlugInstall --sync 
 endif
 
-" =======================
-" Source other settings (maps, autocmds.)
-" =======================
-augroup myvimrc
-au!
-for vimfile in split(glob(g:data_dir . '/vimrc.d/after-plug/*.vim' ), '\n')
-    exe 'source' vimfile
-endfor
-augroup END
+" Post config
+call s:read_all_files('post.vim')

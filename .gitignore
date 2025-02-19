@@ -5,5 +5,4 @@ plugged
 swp
 undo
 coc.d/*
-miniplugs
-extraplug.vim
+extraplug

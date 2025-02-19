@@ -1,3 +1,5 @@
+command -nargs=* -complete=shellcmd Cmd new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args> 
+
 if ! has('nvim')
     "neovim does not seem to have :horizontal
     nnoremap <silent> <C-w><C-w> <Cmd>horizontal wincmd =<CR>
@@ -43,3 +45,11 @@ nnoremap ZZ <Cmd>w<CR>
 
 " Oh no, I lost my cursor!
 nnoremap <silent> <leader>h <Cmd>setl cursorcolumn! \| setl cursorline!<CR>
+
+" Some omnithing
+if has("autocmd") && exists("+omnifunc")
+    autocmd Filetype *
+            \	if &omnifunc == "" |
+            \		setlocal omnifunc=syntaxcomplete#Complete |
+            \	endif
+endif

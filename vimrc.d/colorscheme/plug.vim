@@ -1,0 +1,2 @@
+Plug 'morhetz/gruvbox'
+
