@@ -30,7 +30,13 @@ endif
 " We clean the myvimrc autogroup
 augroup myvimrc | au!
 function! s:read_all_files(file)
-    for vimfile in split(glob(g:vimrc_dir . '/vimrc.d/**/'. a:file ), '\n')
+    let main_plug = split(glob(g:vimrc_dir . '/vimrc.d/*/'. a:file ), '\n')
+
+    " Extraplug are plugins that I don't want to track...
+    let extra_plug = split(glob(g:vimrc_dir . '/vimrc.d/extraplug/*/'. a:file ), '\n')
+    let all_plug = main_plug + extra_plug
+
+    for vimfile in all_plug
         augroup myvimrc
         exe 'source' vimfile
         augroup END
@@ -45,9 +51,9 @@ let g:plugged_root_dir = g:vimrc_dir.'/bundle/'
 call plug#begin(g:plugged_root_dir)
 call s:read_all_files('plug.vim')
 call plug#end()
-
 if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   PlugInstall --sync 
 endif
+
 " Post config
 call s:read_all_files('post.vim')
