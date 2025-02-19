@@ -1,8 +1,6 @@
 .vim_init_complete
 .netrwhist
 autoload
-plugged
-swp
-undo
+bundle
 coc.d/*
 extraplug

@@ -40,7 +40,7 @@ endfunction
 call s:read_all_files('pre.vim')
 
 " Plugins
-let g:plugged_root_dir = g:data_dir.'/plugged/'
+let g:plugged_root_dir = g:data_dir.'/bundle/'
 call plug#begin(g:plugged_root_dir)
 call s:read_all_files('plug.vim')
 call plug#end()
