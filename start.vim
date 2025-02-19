@@ -11,21 +11,6 @@ execute 'set runtimepath^='.g:vimrc_dir
 execute 'set runtimepath^='.g:vimrc_dir.'/after'
 let &packpath = &runtimepath
 
-" =======================
-" Initialization
-" =======================
-let s:completion_flag_file = vimrc_dir . '/.vim_init_complete'
-
-if empty(glob(s:completion_flag_file))
-  execute '!bash '.g:vimrc_dir.'/script/init_vim.sh'
-  if empty(glob(s:completion_flag_file))
-      "Here, initialization failed
-      echo "Started vanilla vim"
-      finish
-  endif
-endif
-
-
 
 " We clean the myvimrc autogroup
 augroup myvimrc | au!
