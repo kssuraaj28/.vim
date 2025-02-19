@@ -9,6 +9,7 @@ if empty(glob(s:completion_flag_file))
   if empty(glob(s:completion_flag_file))
       "Here, initialization failed
       echo "Initialization failure!!"
-      quit "TODO: Test
+      sleep 2
+      quit 
   endif
 endif

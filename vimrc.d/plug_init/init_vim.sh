@@ -36,5 +36,4 @@ exit_if_absent rg
 install_plug
 
 echo "Installation sucessful"
-echo "Creating marker $completion_flag_file"
 mark_completion
