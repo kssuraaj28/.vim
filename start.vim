@@ -7,8 +7,8 @@ let g:vimrc_dir = fnamemodify(s:script_path, ':h')
 " =======================
 " Setting runtimepath, inspired from vim-to-nvim
 " =======================
-execute 'set runtimepath^='.vimrc_dir
-execute 'set runtimepath^='.vimrc_dir.'/after'
+execute 'set runtimepath^='.g:vimrc_dir
+execute 'set runtimepath^='.g:vimrc_dir.'/after'
 let &packpath = &runtimepath
 
 " =======================
@@ -24,6 +24,7 @@ if empty(glob(s:completion_flag_file))
       finish
   endif
 endif
+
 
 
 " We clean the myvimrc autogroup
@@ -48,6 +49,5 @@ call plug#end()
 if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   PlugInstall --sync 
 endif
-
 " Post config
 call s:read_all_files('post.vim')
