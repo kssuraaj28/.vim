@@ -1,5 +1,5 @@
-.plug_init_complete
+.plug_install_complete
 .netrwhist
 autoload
 bundle
-extraplug
+extravimrc.d
