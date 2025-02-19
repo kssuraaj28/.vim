@@ -2,10 +2,6 @@
 " https://stackoverflow.com/questions/61580682/coc-change-setting-from-key-or-script
 
 if empty($DISABLE_COCVIM)
-    call coc#config("snippets.priority",110)
-    call coc#config("inlayHint.enable","false")
-    call coc#config("coc.preferences.formatOnSaveFiletypes", ["cpp","json","c"])
-" TODO: Can we have the two previous things in the same call?
 
     " Symbol Navigation
     nnoremap <silent><nowait> <leader>S  <Cmd>CocList -I symbols<cr> 
@@ -79,8 +75,4 @@ if empty($DISABLE_COCVIM)
 
     " Highlight hovered text
     autocmd CursorHold * silent call CocActionAsync('highlight')
-
-    " TODO: Throw this elsewhere
-    nnoremap <silent> <Leader>ch <Cmd>CocCommand clangd.switchSourceHeader<CR>
-    nnoremap <silent> <Leader>ci <Cmd>CocCommand clangd.symbolInfo<CR>
 endif
