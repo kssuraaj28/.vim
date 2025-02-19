@@ -4,9 +4,7 @@
 To use this configuration, simply clone this repository as your `~/.vim` directory (for vim) or `~/.config/nvim` directory (for neovim).
 
 ## The Big Idea
-This vim configuration does not require the user to manually 'run' any install script. The vimrc included in this configuration does this for you (by running the `init_vim.sh` script). If the setup is successful, a marker is set, which prevents re-running this init script, thereby eliminating any overheads during normal use.
-
-During initialization, the script will check whether the necessary prerequisites are present on the system, and installs any that are missing and easy to install.
+This vim configuration is supposed to 'just work'. When it is first run, the necessary dependencies are downloaded automatically.
 
 This configuration has been tested on a fresh install of Arch Linux, Debian, MacOS, and even WSL2 on Windows, and does seem to work.
 
@@ -15,7 +13,11 @@ There are multiple ways you can use this repository (wow!).
 
 1. **As your `.vim` or `.config/nvim` directory**: For vim, simply clone this repository as your (new) `~/.vim` directory, ensuring that you don't have an existing `~/.vimrc`. For neovim, simply clone into `.config/nvim`.
 
-2. **Sourcing `start.vim` from your `.vimrc` and/or `.config/nvim/init.vim`**: A very simple way to do this would be to run `script/install.sh`, which does this for you.
+2. **Sourcing `start.vim` from your `.vimrc` and/or `.config/nvim/init.vim`**: A very simple way to do this would be to run:
+```
+    echo "source $(realpath start.vim)" > ~/.vimrc #vim
+    echo "source $(realpath start.vim)" > ~/.config/nvim/init.vim #nvim
+```
 
 3. **Using `vim -u start.vim`**: If you already have an existing vim setup, and you want to try out this setup, this is a good option. You can even use an alias to make things easier: `alias myvim="vim -u $(realpath start.vim)"`.
 
