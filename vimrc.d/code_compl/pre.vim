@@ -13,7 +13,7 @@ if empty($DISABLE_COCVIM)
         if empty(glob(s:completion_flag_file))
             echom "Node install failure for coc-vim"
             let $DISABLE_COCVIM='y'
-            finish
+            finish "TODO: Test this
         endif
     endif
 
