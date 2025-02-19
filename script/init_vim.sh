@@ -84,14 +84,6 @@ install_plug() {
     check_and_install file "$vimplug_file" "$install_cmd"
 }
 
-install_node() {
-    local node_install_prefix=$vim_data_dir/coc.d/node_install
-    rm -rf "$node_install_prefix"
-    mkdir -p "$node_install_prefix"
-    curl -sL install-node.vercel.app/lts | bash -s -- --prefix=$node_install_prefix --yes
-}
-
-
 mark_completion() {
     local completion_flag_file=".vim_init_complete"
     touch "$completion_flag_file"
@@ -106,7 +98,6 @@ exit_if_absent bash
 exit_if_absent rg
 
 install_plug
-install_node
 
 print_msg success "Installation sucessful"
 print_msg success "Creating marker $completion_flag_file"

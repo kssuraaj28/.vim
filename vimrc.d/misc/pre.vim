@@ -59,8 +59,8 @@ set showmatch
 " =======================
 " Undo, Swaps, Backups
 " =======================
-" let &directory = expand(data_dir).'/swp//'
-" let &undodir = expand(data_dir).'/undo//'
+" let &directory = expand(vimrc_dir).'/swp//'
+" let &undodir = expand(vimrc_dir).'/undo//'
 " set undofile                    
 
 set nobackup
