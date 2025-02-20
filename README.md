@@ -35,10 +35,11 @@ This configuration uses [vim plug](https://github.com/junegunn/vim-plug) as its 
 * **Tmux Integration**: Using [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) plugin allows for a uniform keybindings for vim and tmux
 * **Unix Commands**: [vim-eunuch](https://github.com/tpope/vim-eunuch/) lets you perform common unix commands like `mv`, `rm`, etc. from within vim
 
-### Highly Extensible
-This configuration is meant to be highly extensible.
-* You can choose to add 'local/temporary plugins' by adding a `Plug ....` line to `vimrc.d/extraplug.vim` (after creating it). This will not pollute your git repository.
-* You can create a `miniplugs` directory to contain small custom plugins. Adding a new custom plugin is as simple as creating a subdirectory of `miniplugs`, and it will be added to the `runtimepath` automatically.
+### Simple and Extensible
+This configuration is meant to be simpl and extensible. `start.vim` contains boilerplate. Configuration options are stored in directories in `vimrc.d`.
+* `pre.vim` files are sourced before registering plugins
+* `plug.vim` files contain `Plug` command invocations
+* `post.vim` are sourced after loading plugins
 
 ### Tmux Support
 In order to intergrate tmux with the same keybindings, the configuration appends settings to the tmux configuration file (`~/.tmux.conf`) if it doesn't exist.
