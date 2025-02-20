@@ -13,7 +13,7 @@ let g:vimrcd_dir = g:vimrc_dir.'/vimrc.d/'
 let g:extravimrcd_dir = g:vimrc_dir.'/extravimrc.d/'
 
 " Installing plug
-let s:plug_install_flag = g:vimrcd_dir . '/.plug_install_complete'
+let s:plug_install_flag = g:vimrc_dir . '/.init_complete'
 let s:plug_install_script = g:vimrcd_dir . '/install_plug.sh'
 
 if empty(glob(s:plug_install_flag))

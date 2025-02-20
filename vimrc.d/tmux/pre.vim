@@ -1,5 +1,5 @@
 let s:this_script_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
-let s:completion_flag_file = s:this_script_dir . '/.tmux_setup_complete'
+let s:completion_flag_file = s:this_script_dir . '/.init_complete'
 let s:tmux_cfg_file = '~/.tmux.conf'
 
 if empty(glob(s:completion_flag_file))

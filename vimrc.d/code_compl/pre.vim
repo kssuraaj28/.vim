@@ -5,7 +5,7 @@ if empty($DISABLE_COCVIM)
     let g:coc_global_extensions = ['coc-json', 'coc-snippets', 'coc-clangd', 'coc-syntax']
 
 
-    let s:completion_flag_file = s:this_script_dir . '/.node_install_complete'
+    let s:completion_flag_file = s:this_script_dir . '/.init_complete'
     let s:node_install_dir = s:this_script_dir . '/node_install/'
 
     if empty(glob(s:completion_flag_file))
