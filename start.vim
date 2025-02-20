@@ -29,17 +29,18 @@ endif
 
 " We clean the myvimrc autogroup
 augroup myvimrc | au!
+let s:extra_plug_dirs = split($EXTRA_VIMRCD, ':')
+let s:plug_dir_list = [ g:vimrcd_dir ]  + s:extra_plug_dirs "This can be better
+
 function! s:read_all_files(file)
-    let main_plug = split(glob(g:vimrcd_dir . '/*/'. a:file ), '\n')
+    for dir in s:plug_dir_list
+        let vimfiles = split(glob(dir . '/*/'. a:file ), '\n')
+        for vimfile in vimfiles
+            augroup myvimrc
+            exe 'source' vimfile
+            augroup END
+        endfor
 
-    " Extraplug are plugins that I don't want to track...
-    let extra_plug = split(glob(g:extravimrcd_dir . '/*/'. a:file ), '\n')
-    let all_plug = main_plug + extra_plug
-
-    for vimfile in all_plug
-        augroup myvimrc
-        exe 'source' vimfile
-        augroup END
     endfor
 endfunction
 
