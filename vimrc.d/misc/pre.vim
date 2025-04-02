@@ -12,6 +12,7 @@ filetype plugin on
 " Leader Key
 " =======================
 let mapleader = "\<space>"
+let maplocalleader = "," "I don't think that there is any difference between the two, other than intention.
 
 set nocompatible
 set ruler
