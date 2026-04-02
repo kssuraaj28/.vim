@@ -1,4 +1,5 @@
 command -nargs=* -complete=shellcmd Cmd new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args> 
+command Scratch setlocal buftype=nofile | setlocal bufhidden=delete | setlocal nobuflisted | setlocal noswapfile
 
 if ! has('nvim')
     "neovim does not seem to have :horizontal
@@ -53,3 +54,4 @@ if has("autocmd") && exists("+omnifunc")
             \		setlocal omnifunc=syntaxcomplete#Complete |
             \	endif
 endif
+

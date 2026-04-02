@@ -75,7 +75,9 @@ set mouse=n
 " =======================
 " System Clipboard Integration
 " =======================
-set clipboard=unnamedplus
+if has('nvim')
+  set clipboard=unnamedplus " I don't know why vim doesn't work correctly with this
+endif
 
 " =======================
 " Windows don't change
