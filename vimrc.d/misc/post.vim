@@ -56,6 +56,7 @@ if has("autocmd") && exists("+omnifunc")
 endif
 
 nnoremap ZC <Cmd>call <SID>WriteDiffUnderlying()<CR>
+vnoremap <leader><Enter> <Cmd>diffput<CR><esc>
 
 " This function will force write and then will also make a diff window
 function! s:WriteDiffUnderlying() abort
@@ -84,5 +85,4 @@ function! s:WriteDiffUnderlying() abort
   setlocal nomodifiable readonly
   diffthis
 
-  wincmd p
 endfunction
