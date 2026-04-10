@@ -55,3 +55,34 @@ if has("autocmd") && exists("+omnifunc")
             \	endif
 endif
 
+nnoremap ZC <Cmd>call <SID>WriteDiffUnderlying()<CR>
+
+" This function will force write and then will also make a diff window
+function! s:WriteDiffUnderlying() abort
+  let l:file = expand('%:p')
+  if empty(l:file) || !filereadable(l:file)
+    echohl ErrorMsg | echo 'no underlying file' | echohl None
+    return
+  endif
+
+  let l:mem  = getline(1, '$')
+  let l:disk = readfile(l:file)
+  if l:mem ==# l:disk
+    echohl WarningMsg | echo 'file unchanged on disk' | echohl None
+    return
+  endif
+
+  let l:ft = &filetype
+  write!
+  diffthis
+
+  vsplit
+  enew
+  call setline(1, l:disk)
+  let &l:filetype  = l:ft
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile
+  setlocal nomodifiable readonly
+  diffthis
+
+  wincmd p
+endfunction
