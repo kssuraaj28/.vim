@@ -13,9 +13,7 @@ endif
 nnoremap j gj
 nnoremap k gk
 nnoremap Y y$
-
-"Select everything
-nnoremap <C-a> ggVG
+nnoremap yf :%y+
 
 " One way to exit insert/command mode
 " noremap! jk <C-c>
