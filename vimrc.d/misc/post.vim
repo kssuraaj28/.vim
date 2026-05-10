@@ -13,7 +13,7 @@ endif
 nnoremap j gj
 nnoremap k gk
 nnoremap Y y$
-nnoremap yf :%y+
+nnoremap yf <Cmd>%y+<Cr>
 
 " One way to exit insert/command mode
 " noremap! jk <C-c>
