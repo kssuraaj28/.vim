@@ -19,6 +19,10 @@ nnoremap yf <Cmd>%y+<Cr>
 nnoremap J 10j
 nnoremap K 10k
 
+"Move around selected text code
+xnoremap J 10j
+xnoremap K 10k
+
 " One way to exit insert/command mode
 " noremap! jk <C-c>
 " noremap! jK <C-c>
@@ -33,9 +37,6 @@ inoremap <C-w> <nop>
 nnoremap <leader>cd <Cmd>lcd %:p:h<CR><Cmd>pwd<CR>
 nnoremap <leader>.. <Cmd>lcd ..<CR><Cmd>pwd<CR>
 
-"Move around selected text code
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
 
 
 "Mass rename
