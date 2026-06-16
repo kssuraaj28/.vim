@@ -15,6 +15,10 @@ nnoremap k gk
 nnoremap Y y$
 nnoremap yf <Cmd>%y+<Cr>
 
+" Kind of sus, when you do 2J, but okay
+nnoremap J 10j
+nnoremap K 10k
+
 " One way to exit insert/command mode
 " noremap! jk <C-c>
 " noremap! jK <C-c>
@@ -32,6 +36,7 @@ nnoremap <leader>.. <Cmd>lcd ..<CR><Cmd>pwd<CR>
 "Move around selected text code
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
 
 "Mass rename
 nnoremap <leader>n :%s/\<<C-r><C-w>\>//g<Left><Left>
@@ -52,9 +57,6 @@ if has("autocmd") && exists("+omnifunc")
             \		setlocal omnifunc=syntaxcomplete#Complete |
             \	endif
 endif
-
-nnoremap ZC <Cmd>call <SID>WriteDiffUnderlying()<CR>
-vnoremap <leader><Enter> <Cmd>diffput<CR><esc>
 
 " This function will force write and then will also make a diff window
 function! s:WriteDiffUnderlying() abort
@@ -84,3 +86,6 @@ function! s:WriteDiffUnderlying() abort
   diffthis
 
 endfunction
+
+nnoremap ZC <Cmd>call <SID>WriteDiffUnderlying()<CR>
+" vnoremap <leader><Enter> <Cmd>diffput<CR><esc>
