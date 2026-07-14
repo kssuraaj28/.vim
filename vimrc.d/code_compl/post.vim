@@ -25,8 +25,8 @@ if empty($DISABLE_COCVIM)
     nmap <silent> gr <Plug>(coc-references)
 
     " Error Navigation
-    nmap <silent> <leader>j <Plug>(coc-diagnostic-prev)
-    nmap <silent> <leader>k <Plug>(coc-diagnostic-next)
+    nmap <silent> <leader>k <Plug>(coc-diagnostic-prev)
+    nmap <silent> <leader>j <Plug>(coc-diagnostic-next)
 
     " Show Documentation -- TODO: Do we need this in insert mode?
     nnoremap <silent> <leader>d <Cmd>call <SID>show_documentation()<CR> 
