@@ -15,6 +15,9 @@ nnoremap k gk
 nnoremap Y y$
 nnoremap yf <Cmd>%y+<Cr>
 
+
+"TODO: Don't hardcode 10.
+"
 " Kind of sus, when you do 2J, but okay
 nnoremap J 10j
 nnoremap K 10k
@@ -22,6 +25,13 @@ nnoremap K 10k
 "Move around selected text code
 xnoremap J 10j
 xnoremap K 10k
+
+
+nnoremap <silent> <C-j> <C-w>+
+nnoremap <silent> <C-k> <C-w>- 
+nnoremap <silent> <C-h> <C-w>< 
+nnoremap <silent> <C-l> <C-w>> 
+
 
 " One way to exit insert/command mode
 " noremap! jk <C-c>
@@ -38,14 +48,13 @@ nnoremap <leader>cd <Cmd>lcd %:p:h<CR><Cmd>pwd<CR>
 nnoremap <leader>.. <Cmd>lcd ..<CR><Cmd>pwd<CR>
 
 
-
 "Mass rename
 nnoremap <leader>n :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Basic Code Navigation
 nnoremap <leader>e <Cmd>Vex<CR>
 
-" Save on ZZ 
+" Save on ZZ. I should change this
 nnoremap ZZ <Cmd>w<CR>
 
 " Oh no, I lost my cursor!
