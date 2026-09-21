@@ -54,9 +54,6 @@ nnoremap <leader>n :%s/\<<C-r><C-w>\>//g<Left><Left>
 " Basic Code Navigation
 nnoremap <leader>e <Cmd>Vex<CR>
 
-" Save on ZZ. I should change this
-nnoremap ZZ <Cmd>w<CR>
-
 " Oh no, I lost my cursor!
 nnoremap <silent> <leader>h <Cmd>setl cursorcolumn! \| setl cursorline!<CR>
 
