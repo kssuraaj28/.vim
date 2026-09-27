@@ -16,17 +16,6 @@ nnoremap Y y$
 nnoremap yf <Cmd>%y+<Cr>
 
 
-"TODO: Don't hardcode 10.
-"
-" Kind of sus, when you do 2J, but okay
-nnoremap J 10j
-nnoremap K 10k
-
-"Move around selected text code
-xnoremap J 10j
-xnoremap K 10k
-
-
 nnoremap <silent> <C-j> <C-w>+
 nnoremap <silent> <C-k> <C-w>- 
 nnoremap <silent> <C-h> <C-w>< 
