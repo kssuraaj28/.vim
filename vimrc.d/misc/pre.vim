@@ -37,8 +37,8 @@ set shortmess+=c
 
 set nohls
 
-"set number
-"set relativenumber
+set number
+set relativenumber
 
 " =======================
 " Indentation Settings
