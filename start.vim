@@ -3,9 +3,9 @@ let s:script_path = resolve(expand('<sfile>:p'))
 let g:vimrc_dir = fnamemodify(s:script_path, ':h')
 
 
-" Setting runtimepath, inspired from vim-to-nvim
-execute 'set runtimepath^='.g:vimrc_dir
-execute 'set runtimepath^='.g:vimrc_dir.'/after/'
+" Setting the current directory as the runtimepath, in addition to ~/.vim inspired from vim-to-nvim
+let &runtimepath = g:vimrc_dir . ',' . &runtimepath
+" execute 'set runtimepath^='.g:vimrc_dir.'/after/' " I don't really use this
 let &packpath = &runtimepath
 
 
