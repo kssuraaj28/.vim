@@ -23,7 +23,7 @@ There are multiple ways you can use this repository (wow!).
 
 4. **Sourcing `start.vim` after starting vim/nvim**: You can also just `:source start.vim` **after** you start vim.
 
-### Simple and Extensible
+## Simple and Extensible
 This configuration uses [vim plug](https://github.com/junegunn/vim-plug) as its plugin manager. It is straightforward to use, and keeps things simple.
 `start.vim` contains boilerplate. Configuration options are stored in directories in `vimrc.d`.
 
@@ -32,6 +32,10 @@ This configuration uses [vim plug](https://github.com/junegunn/vim-plug) as its 
 * `post.vim` are sourced after loading plugins
 
 Set the `EXTRA_VIMRCD` environment variable to extend this setup.
+
+Some example extensions are for [using rocq]
+(https://github.com/kssuraaj28/vimcoqcfg), or [code completion]
+(https://github.com/kssuraaj28/code-compl-vim).
  
 ## Built-in configuration
 This repository's built-in configuration has the following:
