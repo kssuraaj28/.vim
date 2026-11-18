@@ -33,7 +33,7 @@ This configuration uses [vim plug](https://github.com/junegunn/vim-plug) as its 
 
 Set the `EXTRA_VIMRCD` environment variable to extend this setup.
 
-Some example extensions are for [using rocq](https://github.com/kssuraaj28/vimcoqcfg), or [code completion](https://github.com/kssuraaj28/code-compl-vim).
+Some example extensions are for [using rocq](https://github.com/kssuraaj28/vimcoqcfg) and [code completion](https://github.com/kssuraaj28/code-compl-vim).
  
 ## Built-in configuration
 This repository's built-in configuration has the following:
