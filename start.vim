@@ -10,7 +10,6 @@ let &packpath = &runtimepath
 
 
 let g:vimrcd_dir = g:vimrc_dir.'/vimrc.d/'
-let g:extravimrcd_dir = g:vimrc_dir.'/extravimrc.d/'
 
 " Installing plug
 let s:plug_install_flag = g:vimrc_dir . '/.init_complete'
@@ -50,7 +49,9 @@ call s:read_all_files('pre.vim')
 " Plugins
 let g:plugged_root_dir = g:vimrc_dir.'/bundle/'
 call plug#begin(g:plugged_root_dir)
+
 call s:read_all_files('plug.vim')
+
 call plug#end()
 if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   PlugInstall --sync 
