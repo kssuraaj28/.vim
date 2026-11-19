@@ -4,6 +4,8 @@ let g:vimrc_dir = fnamemodify(s:script_path, ':h')
 
 
 " Setting the current directory as the runtimepath, in addition to ~/.vim inspired from vim-to-nvim
+" I think that whole point of this is to install plug into the autoload of the
+" current directory
 let &runtimepath = g:vimrc_dir . ',' . &runtimepath
 " execute 'set runtimepath^='.g:vimrc_dir.'/after/' " I don't really use this
 let &packpath = &runtimepath
