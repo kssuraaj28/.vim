@@ -9,9 +9,6 @@ endif
 " =======================
 " Key Remaps
 " =======================
-" Basic remaps
-nnoremap j gj
-nnoremap k gk
 nnoremap Y y$
 nnoremap yf <Cmd>%y+<Cr>
 
